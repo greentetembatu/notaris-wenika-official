@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kantor Notaris Wenika Priastuti</title>
+
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="website Kanor Notaris Wenika Priastuti Agustini">
+  <meta property="og:description" content="Pembuatan Akta Notaris CV PT FIRMA KOPERASI YAYASAN PERKUMPULAN ">
+  <meta property="og:url" content="https://greentetembatu.github.io/notaris-wenika-official/">
+  <meta property="og:site_name" content="Kanor Notaris">
+  <meta property="og:updated_time" content="2025-12-11T23:51:00+07:00">
+  <meta property="og:image" content="https://greentetembatu.github.io/notaris-wenika-official/assets/foto2.png">
+  <meta property="og:image:secure_url" content="https://greentetembatu.github.io/notaris-wenika-official/assets/foto2.png">
+  <meta property="og:image:width" content="805">
+  <meta property="og:image:height" content="609">
+  <meta property="og:image:alt" content="sampul">
+  <meta property="og:image:type" content="image/png"> 
+
+
+<link rel="shortcut icon" href="logo-wenika.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/view.css">
+<link rel="stylesheet" href="css/about.css">
+
+</head>
+
+  <body>
+    <!--==========TOP CONTACT===========-->
+    <!--==========TOP CONTACT===========-->
+    <!--==========TOP CONTACT===========-->
+    <section class="top-contact-section">
+      <div class="container top-contact-container">
+        <div class="social-links-container" id="socialLinks"></div>
+        <div class="contact-info-container" id="contactInfo"></div>
+      </div>
+    </section>
+
+    <!--==============NAVIGATION=========== -->
+    <!--==============NAVIGATION=========== -->
+    <!--==============NAVIGATION=========== -->
+    <nav class="navigation-section">
+      <div class="container navigation-container">
+        <a class="logo-container" id="logo"></a>
+
+        <div class="nav-menu-container" id="navMenu"></div>
+
+        <div class="navbar-right">
+          <button class="menu-toggle-contact" id="menuToggleContact">
+            <i class="fas fa-phone"></i> Call Center
+          </button>
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <ul class="dropdown-contact" id="dropdownContact"></ul>
+    </nav>
+
+
+
+
+
+<style>
+      :root {
+        --bg-dark: #0a0a0a;
+        --card-bg: #111111;
+        --text-main: #ffffff;
+        --text-muted: #999;
+        --accent-color: #63d674;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+      }
+
+      .article-section {
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      /* Efek Bintang Latar Belakang */
+      .article-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(circle, #ffffff 1px, transparent 1px),
+          radial-gradient(circle, #ffffff 0.8px, transparent 0.8px);
+        background-size: 100px 100px, 150px 150px;
+        background-position: 0 0, 40px 40px;
+        opacity: 0.2;
+        z-index: 1;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .article-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        font-weight: 700;
+      }
+
+      /* Grid Kartu Artikel */
+      #article-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .article-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: left;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        border: 1px solid #222;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .article-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent-color);
+      }
+
+      .article-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .article-body {
+        padding: 25px;
+        flex-grow: 1;
+      }
+
+      .article-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        color: var(--text-main);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .article-description {
+        font-size: 0.9rem;
+        color: #ccc;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      /* Meta Info */
+      .article-meta {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* CSS MODAL (Sekarang sudah di luar .article-description) */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        overflow-y: auto;
+      }
+
+      .modal-content {
+        background-color: #111;
+        margin: 5% auto;
+        padding: 0; /* padding dihilangkan agar gambar bisa full ke pinggir atas */
+        border-radius: 15px;
+        max-width: 800px;
+        width: 90%;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #333;
+      }
+
+      .modal-inner-padding {
+        padding: 30px;
+      }
+
+      .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 40px;
+        cursor: pointer;
+        color: #fff;
+        z-index: 1001;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      #modalImg {
+        width: 100%;
+        max-height: 450px;
+        object-fit: cover;
+      }
+
+      .modal-text {
+        line-height: 1.8;
+        color: #ddd;
+        font-size: 1.1rem;
+        white-space: pre-line;
+      }
+
+      .modal-meta {
+        font-size: 0.9rem;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .article-section h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="article-section">
+      <div class="container">
+        <h2>Artikel</h2>
+        <div id="article-grid"></div>
+      </div>
+    </section>
+
+    <div id="articleModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modalImg" src="" alt="" />
+        <div class="modal-inner-padding">
+          <h2 id="modalTitle" style="margin-top: 0"></h2>
+          <div class="modal-meta" id="modalMeta"></div>
+          <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0" />
+          <div id="modalDescription" class="modal-text"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const articleData = [
+        {
+          id: 1,
+          title: "Strategi Branding Usaha Pulsa: Rahasia Kuatkan Bisnis",
+          image:
+            "https://images.unsplash.com/photo-1512428559083-a401a337e453?q=80&w=2070",
+          description:
+            "Strategi branding sangat krusial di era digital. \n\nPastikan Anda memiliki identitas visual yang kuat dan pelayanan yang konsisten. Branding bukan sekadar logo, melainkan janji Anda kepada pelanggan.",
+          author: "Hive Five",
+          date: "December 24, 2025",
+        },
+        {
+          id: 2,
+          title: "KBLI 30300: Industri Strategis Sarat Regulasi",
+          image:
+            "https://images.unsplash.com/photo-1559297434-2d8a134e082b?q=80&w=1974",
+          description:
+            "Industri ini membutuhkan ketelitian dalam pengurusan izin. \n\nPastikan semua dokumen legalitas Anda sesuai dengan standar terbaru Kemenkumham dan OSS RBA.",
+          author: "Hive Five",
+          date: "December 24, 2025",
+        },
+        {
+          id: 3,
+          title: "Pentingnya Memilih Izin Usaha yang Tepat (KBLI)",
+          image:
+            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070",
+          description:
+            "Salah memilih kode KBLI bisa berdampak buruk pada kontrak kerja sama. \n\nKonsultasikan kebutuhan kode bidang usaha Anda dengan tim ahli untuk menghindari kendala di masa depan. \n\nKonsultasikan kebutuhan kode bidang usaha Anda dengan tim ahli untuk menghindari kendala di masa depan. \n\nKonsultasikan kebutuhan kode bidang usaha Anda dengan tim ahli untuk menghindari kendala di masa depan. \n\nKonsultasikan kebutuhan kode bidang usaha Anda dengan tim ahli untuk menghindari kendala di masa depan. \n\nKonsultasikan kebutuhan kode bidang usaha Anda dengan tim ahli untuk menghindari kendala di masa depan. \n\nKonsultasikan kebutuhan kode bidang usaha Anda dengan tim ahli untuk menghindari kendala di masa depan. \n\nKonsultasikan kebutuhan kode bidang usaha Anda dengan tim ahli untuk menghindari kendala di masa depan. \n\nKonsultasikan kebutuhan kode bidang usaha Anda dengan tim ahli untuk menghindari kendala di masa depan.",
+          author: "Hive Five",
+          date: "December 23, 2025",
+        },
+      ];
+
+      function renderArticles(data) {
+        const grid = document.getElementById("article-grid");
+        data.forEach((article) => {
+          const card = document.createElement("div");
+          card.className = "article-card";
+          card.onclick = () => openArticle(article.id);
+
+          card.innerHTML = `
+                <img src="${article.image}" alt="${
+            article.title
+          }" class="article-img">
+                <div class="article-body">
+                    <h3 class="article-title">${article.title}</h3>
+                    <p class="article-description">${article.description.substring(
+                      0,
+                      120
+                    )}...</p>
+                    <ul class="article-meta">
+                        <li>👤 ${article.author} | 📅 ${article.date}</li>
+                    </ul>
+                </div>
+            `;
+          grid.appendChild(card);
+        });
+      }
+
+      function openArticle(id) {
+        const article = articleData.find((a) => a.id === id);
+        const modal = document.getElementById("articleModal");
+
+        document.getElementById("modalImg").src = article.image;
+        document.getElementById("modalTitle").innerText = article.title;
+        document.getElementById(
+          "modalMeta"
+        ).innerText = `${article.author} | ${article.date}`;
+        document.getElementById("modalDescription").innerText =
+          article.description;
+
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      }
+
+      document.querySelector(".close-modal").onclick = () => {
+        document.getElementById("articleModal").style.display = "none";
+        document.body.style.overflow = "auto";
+      };
+
+      window.onclick = (event) => {
+        const modal = document.getElementById("articleModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+      };
+
+      renderArticles(articleData);
+    </script>
+
+
+
+
+    <!--===============CTA MINI SECTION===============-->
+    <!--===============CTA MINI SECTION===============-->
+    <!--===============CTA MINI SECTION===============-->
+    <section class="cta-mini-section">
+      <div class="cta-mini-container" id="ctaMiniContainer"></div>
+    </section>
+
+    <!--===============FOOTER SECTION===============-->
+    <!--===============FOOTER SECTION===============-->
+    <!--===============FOOTER SECTION===============-->
+    <footer class="footer-section">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-col" id="footerInfo"></div>
+          <div class="footer-col" id="footerLinks"></div>
+          <div class="footer-col" id="footerContact"></div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="copyright-container">
+          <p class="copyright-text">
+            &copy; <span id="currentYear"></span>
+            <span id="footerCopyright"></span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
